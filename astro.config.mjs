@@ -6,11 +6,36 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Bistro Pulse Docs', 
+			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
+			logo: {
+				src: '/src/assets/logo.svg'
+			},
+			customCss : [
+				'/src/styles/custom.css',
+			],
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/BitterSweetBoy',
+				linkedin: 'https://www.linkedin.com/in/denisduenas0101/'
 			},
 			sidebar: [
+				{
+					label: 'Getting Starded',
+					items: [
+						{ label: 'Bienvenido a Bistro Pulse 🧑‍🍳', slug: 'introduccion/inicio' },
+						{ label: 'Aprende lo básico', slug: 'introduccion/aprende-lo-basico' },
+					],
+				},
+				{
+					label: 'Administración del proyecto',
+					items: [
+						{ label: 'Análisis de Requerimientos', slug: '' },
+						{ label: 'Requerimientos Funcionales', slug: ''},
+						{ label: 'Requerimientos No Funcionales', slug: ''},
+						{ label: 'Requerimientos Comunes', slug: ''},
+						{ label: 'Metodología de Trabajo', slug: ''},
+					],
+				},
 				{
 					label: 'Guides',
 					items: [
