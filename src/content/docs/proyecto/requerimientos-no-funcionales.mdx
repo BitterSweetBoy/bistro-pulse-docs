@@ -1,0 +1,36 @@
+---
+title: Requerimientos no funcionales
+description: Acerca de los requerimientos no funcionales del software.
+---
+
+#### RNF-001: Rendimiento
+
+- El sistema debe ser capaz de manejar múltiples usuarios concurrentes sin que se degrade significativamente el tiempo de respuesta. Se establecerán tiempos máximos de respuesta para operaciones críticas.
+
+#### RNF-002: Seguridad
+
+- Todos los datos sensibles deberán ser encriptados en tránsito (mediante HTTPS) y en reposo. Se implementarán medidas de protección contra ataques comunes (SQL Injection, XSS, CSRF, DDoS etc.) y se controlará el acceso a funciones críticas mediante roles.
+
+#### RNF-003: Escalabilidad
+
+- La arquitectura del sistema deberá ser modular y escalable, permitiendo la incorporación de nuevas funcionalidades y el manejo de incrementos en la carga de usuarios y transacciones sin afectar el rendimiento.
+
+#### RNF-004: Usabilidad
+
+- La interfaz de usuario debe ser intuitiva, fácil de navegar y adaptable a múltiples dispositivos (responsive design), garantizando una experiencia óptima tanto en computadoras de escritorio como en dispositivos móviles.
+
+#### RNF-005: Mantenibilidad
+
+- El código deberá estar estructurado y documentado siguiendo estándares de programación, facilitando el mantenimiento, la actualización y la incorporación de nuevas funcionalidades.
+
+#### RNF-006: Disponibilidad y Tolerancia a Fallos
+
+- El sistema deberá contar con mecanismos de respaldo y recuperación de datos, así como estrategias de replicación y balanceo de carga en medida la demanda del sistema crezca.
+
+#### RNF-007: Portabilidad
+
+- El sistema deberá ser compatible con los principales navegadores web modernos (Chrome, Firefox, Edge, Safari) y estar diseñado para facilitar su despliegue tanto en entornos de nube como en servidores on-premise.
+
+#### RNF-008: Documentación
+
+- Toda la arquitectura y el código del sistema deberán estar acompañados de documentación técnica detallada, así como de guías de usuario para facilitar la capacitación y el soporte.

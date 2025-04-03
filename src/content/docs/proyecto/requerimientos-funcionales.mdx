@@ -1,0 +1,77 @@
+---
+title: Requerimientos Funcionales
+description: Acerca de los requerimientos funcionales del Software
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<Aside title="Nota">
+Los requerimientos definidos en esta sección utilizan una nomenclatura estandarizada. Estos requerimientos servirán como base para definir historias de usuario y planificar los sprints del desarrollo, los cuales serán incorporados al backlog para la implementación gradual de las funcionalidades del sistema.
+</Aside>
+
+
+## Funciones del producto
+
+Los requerimientos funcionales del software fueron divididas en funcionalidades generales del sistema y son las siguientes:
+
+<CardGrid>
+  <LinkCard title="Manejo de Restaurantes" href="/proyecto/funcionalidades/manejo-de-restaurantes/" />
+  <LinkCard title="Manejo de Usuarios" href="/proyecto/funcionalidades/manejo-de-usuarios/" />
+  <LinkCard title="Manejo de Ordenes" href="/proyecto/funcionalidades/manejo-de-ordenes/" />
+  <LinkCard title="Reseñas y Valoraciones" href="/proyecto/funcionalidades/reseñas-y-valoraciones/" />
+  <LinkCard title="Manejo de Repartidores" href="/proyecto/funcionalidades/repartidores/" />
+  <LinkCard title="Administración del sistema" href="/proyecto/funcionalidades/administracion-del-sistema/" />
+</CardGrid>
+
+
+## Restricciones para las funcionalidades
+
+Acontinuación se detalla las restricciones técnicas y operativas que deben considerarse en el desarrollo e implementación del sistema.
+
+### Políticas de la empresa
+
+El sistema deberá operar bajo una serie de reglas que regulen su uso y garanticen un funcionamiento adecuado para todos los usuarios. Estas políticas incluyen:
+
+#### Registro y Verificación de Restaurantes:
+    - Solo podrán operar restaurantes verificados y aprobados por la administración del sistema.
+    - Se debe validar la información legal del restaurante antes de su activación en la plataforma.
+#### Creación y Gestión de Menús:
+    - Los dueños de restaurantes pueden modificar su menú en cualquier momento, pero los cambios en precios solo podrán reflejarse en órdenes futuras.
+    - Los productos fuera de stock deben marcarse como no disponibles en el sistema.
+#### Uso de la Plataforma:
+    - Todos los usuarios deben aceptar los términos y condiciones antes de utilizar el servicio.
+    - Se prohíbe la creación de múltiples cuentas para evadir restricciones o sanciones.
+#### Sistema de Reseñas y Valoraciones:
+    - Los clientes pueden dejar una reseña sobre su experiencia con el restaurante y el repartidor.
+    - Los restaurantes pueden responder a las reseñas, pero no eliminarlas ni modificarlas.
+#### Tiempo de Preparación y Entrega:
+    - Los restaurantes deben definir un tiempo estimado de preparación por platillo.
+    - El sistema alertará si una orden excede el tiempo de preparación promedio.
+    - Los repartidores deben actualizar el estado del pedido en cada fase de la entrega.
+#### Cancelaciones de Órdenes:
+    - Un cliente puede cancelar una orden antes de que el restaurante la confirme sin penalización.
+    - Si el restaurante ya comenzó la preparación, la cancelación estará sujeta a las políticas del negocio.
+    - Un repartidor no puede cancelar una orden después de haberla aceptado sin justificación válida.
+#### Reembolsos y Disputas:
+    - Los clientes pueden solicitar un reembolso en caso de productos defectuosos, pedidos incorrectos o entregas fallidas.
+    - Los reembolsos serán procesados por la administración según la causa de la reclamación.
+#### Asignación de Pedidos:
+    - Los pedidos se asignarán automáticamente a los repartidores disponibles en función de la ubicación y la carga de trabajo.
+    - Un repartidor puede rechazar un pedido, pero el sistema limitará rechazos frecuentes.
+#### Evaluación de Desempeño:
+    - Los repartidores serán evaluados con base en el tiempo de entrega, cumplimiento de órdenes y reseñas de clientes.
+    - Se podrán suspender repartidores con una tasa de entrega baja o con quejas reiteradas.
+
+### Suposiciones y Dependencias
+
+- Se asume que el sistema será desplegado en servidores con suficiente capacidad para manejar la demanda esperada de usuarios y transacciones.
+- Se contará con una base de datos PostgreSQL optimizada para la gestión eficiente de la información.
+- Los usuarios (clientes, restaurantes y repartidores) necesitarán una conexión estable a internet para interactuar con el sistema.
+- Se asume que los repartidores tendrán acceso a dispositivos móviles con conexión de datos para actualizar el estado de las entregas.
+- Se espera que todos los restaurantes registrados en la plataforma cumplan con las normativas sanitarias y de comercio electrónico locales.
+- Las transacciones de pago estarán sujetas a las regulaciones financieras vigentes en la región.
+- Se asume que los usuarios ingresarán información verídica en los registros de restaurantes, pedidos y pagos.
+- No se prevé el uso malintencionado del sistema por parte de usuarios o repartidores, aunque se implementarán mecanismos de auditoría y seguridad.
+- Se utilizarán APIs externas (como Google Maps) para calcular rutas y estimar tiempos de entrega.
+- La precisión de la geolocalización dependerá de la calidad del servicio proporcionado por terceros.

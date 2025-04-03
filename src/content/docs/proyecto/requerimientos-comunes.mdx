@@ -1,0 +1,58 @@
+---
+title: Requerimientos Comunes
+description: Acerca de los requerimientos comunes dle software
+---
+
+## Operaciones paralelas
+
+- El sistema deberá soportar múltiples usuarios accediendo simultáneamente sin degradación del rendimiento.
+- Las actualizaciones en órdenes y menús deben reflejarse en tiempo real.
+
+## Funciones de Auditoria
+
+- Registro de accesos y modificaciones en el sistema.
+- Historial de cambios en pedidos, pagos y configuraciones administrativas.
+
+## Protocolos de comunicación
+
+- API REST para comunicación entre frontend y backend.
+- WebSockets para actualización en tiempo real de órdenes.
+- Seguridad mediante HTTPS y autenticación basada en sesiones.
+
+## Requerimientos Comunes
+
+#### RF-COM-001: Gestión de Sesiones y Autenticación
+
+- El sistema debe permitir el inicio y cierre de sesión seguro para todos los usuarios.
+- Se implementará un mecanismo de recuperación de contraseñas y la verificación de la identidad a través de autenticación de dos factores (opcional).
+- El administrador y equipo de soporte del sistema deberá poder cerrar la sesión de cualquier usuario del sistema.
+- Se controlará el acceso a las funcionalidades basándose en roles definidos (administrador, dueño de restaurante, repartidor, cliente).
+
+#### RF-COM-002: Búsqueda, Filtrado y Exportación
+
+- Todos los listados (restaurantes, usuarios, productos, órdenes, ventas, reseñas, etc.) deben incluir funcionalidades estandarizadas para la búsqueda y filtrado mediante criterios predefinidos.
+- Todos los listados serán paginas para evitar la saturación de datos.
+- Todas las columnas de los listados permitirán modificar su ancho.
+- Se ofrecerá la posibilidad de exportar la información en formatos comunes (CSV, Excel) para su análisis externo.
+
+#### RF-COM-003: Interfaz de Usuario Unificada
+
+- La experiencia de usuario debe ser coherente en todas las pantallas y módulos, siguiendo un diseño uniforme en términos de colores, tipografía, íconos y navegación.
+- La interfaz se diseñará para ser intuitiva, facilitando la comprensión de los flujos de trabajo sin necesidad de instrucciones adicionales.
+
+#### RF-COM-004: Integración de Notificaciones
+
+- El sistema deberá incluir un mecanismo para enviar notificaciones en tiempo real (por ejemplo, actualizaciones de órdenes, cambios de estado, alertas administrativas) tanto a través de la plataforma web como por otros medios (correo electrónico, SMS o notificaciones push).
+
+#### RF-COM-005: Validación y Consistencia de Datos
+
+- Se implementarán reglas de validación tanto en el lado del cliente como en el servidor para asegurar la integridad de la información.
+- Se deberá controlar la consistencia de datos en operaciones CRUD (crear, leer, actualizar, eliminar) en todos los módulos.
+
+#### RF-COM-006: Auditoría y Registro de Actividades
+
+- El sistema debe registrar de forma detallada las acciones críticas de los usuarios (accesos, modificaciones de datos, cambios en configuraciones) para facilitar auditorías y la trazabilidad de eventos.
+- Los logs de auditoría deberán ser almacenados de forma segura y permitir su consulta por administradores autorizados.
+
+El Api deberá ser construida con un log personalizado donde los registros serán enviados a un monitor de salud como por ejemplo Seq
+

@@ -7,7 +7,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Bistro Pulse Docs', 
-			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
+			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
 			logo: {
 				src: '/src/assets/logo.svg'
 			},
@@ -27,24 +27,44 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Administración del proyecto',
+					label: 'Administración de Proyecto',
 					items: [
-						{ label: 'Análisis de Requerimientos', slug: '' },
-						{ label: 'Requerimientos Funcionales', slug: ''},
-						{ label: 'Requerimientos No Funcionales', slug: ''},
-						{ label: 'Requerimientos Comunes', slug: ''},
-						{ label: 'Metodología de Trabajo', slug: ''},
+					  { label: 'Análisis de Requerimientos', slug: 'proyecto/analisis-de-requerimientos' },
+					  {
+						label: 'Requerimientos Funcionales',
+						items: [
+						  { label: 'Funcionalidades', slug: 'proyecto/requerimientos-funcionales' },
+						  { label: 'Manejo de Restaurantes', slug: 'proyecto/funcionalidades/manejo-de-restaurantes' },
+						  { label: 'Manejo de Usuarios', slug: 'proyecto/funcionalidades/manejo-de-usuarios' },
+						  {
+							label: 'Manejo de Ordenes', slug: 'proyecto/funcionalidades/manejo-de-ordenes',
+						  },
+						  {
+							label: 'Reseñas y Valoraciones', slug: 'proyecto/funcionalidades/reseñas-y-valoraciones',
+						  },
+						  {
+							label: 'Manejo de Repartidores', slug: 'proyecto/funcionalidades/repartidores',
+						  },
+						  {
+							label: 'Administración del sistema', slug: 'proyecto/funcionalidades/administracion-del-sistema',
+						  }
+						]
+					  },
+					  { label: 'Requerimientos no Funcionales', slug: 'proyecto/requerimientos-no-funcionales' },
+					  { label: 'Requerimientos Comunes', slug: 'proyecto/requerimientos-comunes' },
+					  { label: 'Requerimientos Futuros', slug: 'proyecto/requerimientos-futuros' },
+					  { label: 'Metodología de Trabajo', slug: 'proyecto/metodologia-de-trabajo' }
 					],
+					
 				},
 				{
-					label: 'Guides',
+					label: 'Bistro Pulse Api',
 					items: [
-						// Each item here is one entry in the navigation menu.
 						{ label: 'Example Guide', slug: 'guides/example' },
 					],
 				},
 				{
-					label: 'Reference',
+					label: 'Bistro Pulse Frontend',
 					autogenerate: { directory: 'reference' },
 				},
 			],

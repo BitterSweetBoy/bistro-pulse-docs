@@ -1,0 +1,104 @@
+---
+title: Análisis de Requerimientos
+description: Acerca de los requerimientos del software.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="Advertencia">
+Los requerimientos de este proyecto han sido desarrollados siguiendo el estándar IEEE 830. Puedes descargar el documento completo de Especificación de Requerimientos de Software (ERS) en formato PDF [aquí](https://ejemplo.com/documento-ERS.pdf).
+</Aside>
+
+## Alcance
+
+**Bistro Pulse** es una aplicación web que facilita la **gestión integral de las operaciones de restaurantes**. La plataforma abarca múltiples procesos clave que se detallan a continuación:
+
+- **Gestión de restaurantes:**  
+  Permite la administración y actualización de la información de cada sucursal, asegurando que los datos estén siempre al día.
+
+- **Administración de usuarios:**  
+  Facilita el manejo de la información de clientes y colaboradores, optimizando la comunicación interna y externa.
+
+- **Gestión del menú de comida:**  
+  Abarca el mantenimiento del catálogo de productos, así como la organización en categorías y complementos, para ofrecer un menú siempre actualizado.
+
+- **Administración de órdenes:**  
+  Ofrece seguimiento detallado y trazabilidad de cada pedido, permitiendo una gestión precisa desde la creación hasta el cierre.
+
+- **Gestión de reseñas:**  
+  Permite la consulta y respuesta a las opiniones de los usuarios, impulsando la mejora continua basada en la retroalimentación.
+
+- **Administración de repartidores:**  
+  Abarca la asignación de entregas y el control de asistencia y rendimiento, asegurando una logística eficiente.
+
+- **Gestión de transacciones financieras:**  
+  Se realiza a través del módulo **Wallet**, facilitando el control y registro de todas las operaciones monetarias.
+
+- **Configuración de reglas de negocio y parámetros operativos:**  
+  Se gestiona mediante herramientas administrativas que permiten ajustar las políticas y procedimientos sin necesidad de cambios en el código.
+
+- **Sistema de seguridad y auditoría:**  
+  Implementa mecanismos para el registro y control de las acciones realizadas en el sistema, garantizando transparencia y protección de datos.
+
+---
+
+## Perspectiva del Producto
+
+**Bistro Pulse** se concibe como una **solución modular y escalable** diseñada para la administración operativa de cadenas de restaurantes. Sus características distintivas son:
+
+- **Independencia:**  
+  Su funcionamiento no depende de otros aplicativos, lo que facilita su integración en distintos entornos administrativos.
+
+- **Gestión integral:**  
+  El producto abarca todas las áreas operativas críticas, desde la administración de restaurantes y usuarios hasta el seguimiento de órdenes, ventas y reseñas.
+
+- **Seguridad y control de acceso:**  
+  Las funcionalidades están protegidas a través de un sistema de inicio de sesión seguro y roles diferenciados, garantizando que solo el personal autorizado pueda acceder a la información.
+
+- **Futuro y escalabilidad:**  
+  Diseñado para operar en entornos reales de restaurantes, Bistro Pulse permite una integración fluida entre sus módulos y se adapta a futuros requerimientos o ampliaciones. Su arquitectura modular favorece la incorporación de nuevas funcionalidades y la adaptación a cambios en el mercado, en línea con las prácticas modernas de desarrollo ágil y escalable.
+
+---
+
+Con este enfoque, **Bistro Pulse** se presenta como una herramienta integral y adaptable que mejora la eficiencia operativa y ofrece información clave para la toma de decisiones estratégicas. La documentación se ha preparado pensando en diversos perfiles, garantizando que tanto el personal técnico como los responsables de la gestión operativa puedan comprender y utilizar la plataforma eficazmente.
+
+## Características de los Usuarios
+
+El sistema estará dirigido a distintos tipos de usuarios, cada uno con permisos y necesidades específicas dentro de la plataforma. A continuación, se describen los principales tipos de usuarios:
+
+### Administrador
+
+- Descripción: Responsable de la gestión global del sistema.
+- Funciones Clave:
+    - Configurar reglas de negocio, zonas de entrega y métodos de pago.
+    - Administrar usuarios, restaurantes y órdenes.
+    - Acceder a reportes financieros y estadísticas.
+- Nivel de Experiencia: Usuario con conocimientos básicos en administración de plataformas web.
+
+### Encargado Restaurante
+
+- Descripción: Usuario encargado de gestionar un restaurante dentro del sistema.
+- Funciones Clave:
+    - Configurar el menú de comida, precios y disponibilidad.
+    - Supervisar y administrar las órdenes recibidas.
+    - Gestionar la información del restaurante y reportes de ventas.
+- Nivel de Experiencia: Usuario con conocimientos básicos en gestión de restaurantes y manejo de plataformas digitales.
+
+### Repartidor
+
+- Encargado de la entrega de pedidos a los clientes.
+- Funciones Clave:
+    - Recibir y aceptar órdenes asignadas.
+    - Registrar la entrega de pedidos y actualizar su estado.
+    - Consultar historial de entregas y pagos.
+- Nivel de Experiencia: Usuario con experiencia en movilidad y manejo de aplicaciones móviles de reparto.
+
+### Cliente
+
+- Descripción: Usuario que realiza pedidos en la plataforma.
+- Funciones Clave:
+    - Explorar el menú y realizar pedidos.
+    - Realizar pagos y dar seguimiento a sus órdenes.
+    - Escribir reseñas y calificar restaurantes y repartidores.
+- Nivel de Experiencia: Usuario general con conocimientos básicos en comercio electrónico.
+
