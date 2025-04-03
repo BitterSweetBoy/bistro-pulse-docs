@@ -1,0 +1,39 @@
+---
+title: Reseñas y Valoraciones
+description: Requerimientos funcionales para el manejo de reseñas y valoraciones
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Obejtivo">
+El sistema debe permitir a los clientes registrar reseñas y valoraciones sobre restaurantes, productos del menú y repartidores, mientras que los administradores podrán visualizar, filtrar y responder a dichas reseñas en vistas resumidas y detalladas.
+</Aside>
+
+#### RF-RV-01: Registro de Reseñas por Parte del Cliente
+
+- **Condición**: Después de la entrega de un pedido, el cliente podrá dejar una reseña y calificación sobre su experiencia.
+- **Acción**: El cliente podrá valorar distintos aspectos de su pedido mediante un sistema de estrellas o puntos (por ejemplo, de 1 a 5). Podrá ingresar comentarios adicionales y seleccionar categorías específicas para su reseña:
+    - Restaurante: Calidad del servicio, tiempos de preparación, presentación del pedido.
+    - Producto: Calidad y sabor de la comida.
+    - Repartidor: Puntualidad, atención y estado de la entrega.
+- Validación: El sistema verificará que el cliente haya recibido su pedido antes de permitirle dejar una reseña. Se limitará la longitud del comentario y se evitarán reseñas vacías si no se ha seleccionado una calificación.
+- **Resultado**: La reseña se registrará y quedará visible en el sistema para su gestión y análisis.
+
+#### RF-RV-02: Visualización del Listado de Reseñas
+
+- **Condición**: Al acceder al módulo de reseñas, el sistema mostrará un listado paginado con las opiniones registradas.
+- **Acción**: El listado incluirá información clave como el nombre del usuario, fecha de la reseña, tipo de reseña (restaurante, producto o repartidor), calificación y un extracto del comentario.
+- **Resultado**: Los administradores podrán revisar las reseñas con opciones de búsqueda y filtrado.
+
+#### RF-RV-03: Visualización Detallada de una Reseña
+
+- **Condición**: Al hacer clic en una reseña del listado, el sistema mostrará la vista completa con todos los detalles.
+- **Acción**: Se presentará el comentario completo, la calificación otorgada, la fecha de publicación y una opción para responder.
+- **Resultado**: El administrador podrá analizar cada reseña para tomar acciones o dar seguimiento.
+
+#### RF-RV-04: Respuesta a una Reseña por Parte del Restaurante
+
+- **Condición**: En la vista detallada de una reseña, se ofrecerá la opción de responder.
+- **Acción**: El administrador podrá escribir un mensaje de respuesta al cliente.
+- Validación: Se verificará que el mensaje de respuesta cumpla con las normas de formato y longitud establecidas.
+- **Resultado**: La respuesta se mostrará junto a la reseña original y será visible para el cliente.

@@ -1,0 +1,62 @@
+---
+title: Administración del sistema
+description: Requerimientos funcionales para la administración del sistema
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Obejtivo">
+El sistema debe proporcionar herramientas para la configuración y ajuste de reglas de negocio, permitiendo modificar parámetros clave sin intervención técnica, asegurando que las operaciones puedan gestionarse dinámicamente.
+</Aside>
+
+#### RF-ADM-01: Configuración General del Sistema
+
+- **Condición**: Los administradores podrán modificar parámetros generales del sistema desde una interfaz de configuración.
+- **Acción**: Se permitirá definir valores clave, tales como:
+    - Horarios de operación del servicio
+    - Configuración de notificaciones (email/SMS/push)
+- Políticas de servicio y términos de uso
+- **Resultado**: Los cambios configurados afectarán el comportamiento del sistema en tiempo real.
+
+#### RF-ADM-02: Gestión de Estados de Órdenes
+
+- **Condición**: Se deben definir y modificar los estados posibles de las órdenes en el sistema.
+- **Acción**: El administrador podrá: Agregar nuevos estados (Ejemplo: "En preparación", "En camino", "Entregado"), Modificar nombres y condiciones de los estados y definir reglas de transición entre estados
+- **Resultado**: Se garantizará que las órdenes sigan un flujo lógico y estructurado.
+
+#### RF-ADM-03: Configuración de Zonas de Entrega
+
+- **Condición**: El sistema deberá permitir la administración de áreas geográficas donde se ofrece el servicio de entrega.
+- **Acción**: Los administradores podrán:
+    - Dibujar zonas de cobertura por restaurante en un mapa interactivo
+    - Definir costos de envío por zona
+    - Establecer tiempos estimados de entrega por área
+- **Resultado**: Se optimizará la distribución de pedidos y se ajustarán los costos según la ubicación.
+
+#### RF-ADM-04: Definición de Descuentos y Promociones
+
+- **Condición**: Se deberán establecer reglas para aplicar descuentos y promociones.
+- **Acción**: El sistema permitirá la configuración de:
+    - Cupones de descuento personalizados
+    - Descuentos por volumen de compra
+    - Promociones por usuario recurrente
+    - Ofertas en fechas específicas
+- **Resultado**: Se podrán activar estrategias comerciales sin necesidad de modificar el código.
+
+#### RF-ADM-05: Gestión de Permisos y Roles de Usuarios
+
+- **Condición**: Se requiere controlar los accesos a distintas funciones del sistema.
+- **Acción**: Los administradores podrán:
+    - Definir roles personalizados (Ejemplo: "Encargado", "Supervisor", "Super Admin")
+    - Configurar permisos específicos por rol
+    - Asignar roles a usuarios individuales
+- **Resultado**: Se garantizará que cada usuario tenga acceso solo a las funcionalidades necesarias para su rol.
+
+#### RF-ADM-09: Gestión de Logs y Auditoría
+
+- **Condición**: El sistema deberá registrar eventos clave para seguimiento y control.
+- **Acción**: Se generarán logs de actividades, incluyendo:
+    - Cambios en configuraciones
+    - Accesos y cierres de sesión
+    - Modificaciones en estados de órdenes
+- **Resultado**: Se asegurará la trazabilidad de cambios y acciones dentro del sistema.

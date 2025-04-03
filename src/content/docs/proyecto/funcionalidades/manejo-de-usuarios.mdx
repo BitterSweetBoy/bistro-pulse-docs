@@ -1,0 +1,43 @@
+---
+title: Manejo de Usuarios
+description: Requerimientos funcionales para el manejo de usuarios
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Obejtivo">
+El sistema debe facilitar la gestión completa de la información de usuarios, permitiendo su creación, edición, visualización detallada e inactivación. Además, se dispondrá de una vista detallada que permita gestionar la información individual de cada usuario y su historial de interacciones con el sistema.
+</Aside>
+
+#### RF-MU-01: Agregar Usuario
+
+- **Condición:** Cuando el administrador selecciona la opción "Agregar Usuario".
+- **Acción:** El sistema desplegará un formulario para capturar la información básica del usuario.
+- **Validación:** Se verificará que los campos obligatorios estén completos y que la información cumpla con el formato requerido.
+- **Resultado:** Se creará un nuevo registro en la base de datos y se actualizará el listado de usuarios.
+
+#### RF-MU-02: Visualizar Usuario
+
+- **Condición:** Cuando el administrador selecciona un usuario del listado.
+- **Acción:** El sistema mostrará una pantalla de detalles con la información completa del usuario.
+- **Resultado:** El administrador accederá a una pestaña cuya navegación será por tabs y podrá revisar la información descrita en el RF-MU-05.
+
+#### RF-MU-03: Editar Usuario
+
+- **Condición:** Cuando el administrador opta por la opción "Editar" en la vista de detalles de un usuario.
+- **Acción:** Se desplegará un formulario precargado con los datos existentes para permitir modificaciones.
+- **Validación:** Se aplicarán las mismas validaciones que en el proceso de agregar un usuario.
+- **Resultado:** Al confirmar los cambios, el sistema actualizará el registro correspondiente en la base de datos.
+
+#### RF-MU-04: Inactivar Usuario
+
+- **Condición:** Cuando el administrador decide inactivar un usuario desde el listado o la vista detallada.
+- **Acción:** El sistema solicitará una confirmación de la acción mediante un mensaje o modal.
+- **Validación:** Se validará que el usuario a inactivar no tenga dependencias con otras entidades activas, es decir, que no tenga pedidos en curso o que no tenga un restaurante que maneja y esté activo.
+- **Resultado:** Una vez confirmada, el estado del usuario se actualizará a "inactivo", impidiendo su acceso al sistema sin eliminar el registro.
+
+#### RF-MU-05: Gestión del Historial de Interacciones
+
+- **Condición:** Al visualizar el perfil de un usuario, el sistema deberá presentar una sección dividida en tabs para mostrar la información detallada del usuario, y debería funcionar para cualquier tipo de usuario, ya sea un administrador/rider o personal de soporte.
+- **Acción:** La pantalla de detalles incluirá pestañas o secciones (por ejemplo, para un Cliente: Overview, Historial de Órdenes, Restaurantes Favoritos, Reseñas y Calificaciones, Puntos de Recompensa).
+- **Resultado:** El administrador podrá consultar de manera organizada toda la actividad registrada para cada usuario.

@@ -1,0 +1,79 @@
+---
+title: Repartidores
+description: Requerimientos funcionales para el manejo de repartidores
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Obejtivo">
+El sistema debe permitir la gestión completa de los repartidores, incluyendo la creación, edición y visualización de su información, el monitoreo de su desempeño, la asignación de pedidos y la administración de sus transacciones relacionadas con las entregas.
+</Aside>
+
+#### RF-RP-01: Registro y Administración de Repartidores
+
+- **Condición**: Se debe contar con un módulo para registrar y administrar la información de los repartidores.
+- **Acción**: El administrador podrá crear nuevos registros de repartidores
+- **Validación**: Se verificará que los datos requeridos sean ingresados correctamente.
+- **Resultado**: Se registrará al repartidor y se podrá visualizar en la lista de repartidores activos.
+
+#### RF-RP-02: Listado de Repartidores
+
+- **Condición**: Desde el panel de administración, se debe mostrar un listado de repartidores activos e inactivos.
+- **Acción**: Se incluirá información resumida, como nombre, disponibilidad, cantidad de pedidos entregados y estado actual.
+- **Resultado**: Los administradores podrán visualizar la información y acceder a detalles específicos.
+
+#### RF-RP-03: Visualización Detallada de un Repartidor
+
+- **Condición**: Al seleccionar un repartidor del listado, el sistema mostrará su información detallada.
+- **Acción**: Se deberá incluir:
+- Datos personales y de contacto
+- Historial de pedidos entregados
+- Calificación promedio y comentarios de clientes
+- Estado actual (activo/en ruta/no disponible)
+- **Resultado**: Se tendrá una visión clara del desempeño del repartidor.
+
+#### RF-RP-04: Asignación de Pedidos a Repartidores
+
+- **Condición**: Los administradores o el sistema podrán asignar automáticamente un pedido a un repartidor disponible.
+- **Acción**: Se deberá evaluar la disponibilidad del repartidor en función de:
+    - Ubicación actual
+    - Cantidad de pedidos en curso
+    - Capacidad de entrega en un período determinado
+- **Validación**: Se evitará asignar más pedidos de los que un repartidor puede manejar al mismo tiempo.
+- **Resultado**: El pedido será asignado y notificado al repartidor a través de su plataforma de trabajo.
+
+#### RF-RP-05: Seguimiento en Tiempo Real de Repartidores
+
+- **Condición**: Los administradores y clientes podrán ver el estado de los repartidores en tiempo real.
+- **Acción**: El sistema integrará un sistema de geolocalización que permita:
+    - Mostrar la ubicación del repartidor en un mapa
+    - Indicar el estado del pedido (en preparación, en camino, entregado)
+- **Resultado**: Se ofrecerá un monitoreo en tiempo real de las entregas en curso.
+
+#### RF-RP-06: Registro de Entregas Realizadas
+
+- **Condición**: Una vez completada una entrega, el sistema registrará la trans**acción**.
+- **Acción**: Se guardarán datos clave, como:
+    - Fecha y hora de entrega
+    - Distancia recorrida
+    - Ubicación de entrega
+    - Se actualizará el estado de la orden.
+- **Resultado**: Se tendrá un historial de entregas por repartidor.
+
+#### RF-RP-07: Evaluación del Desempeño del Repartidor
+
+- **Condición**: Los clientes podrán calificar y dejar comentarios sobre su experiencia con el repartidor.
+- **Acción**: Se registrará una calificación en estrellas y un comentario opcional.
+- **Resultado**: Se generará un historial de desempeño que podrá ser revisado por los administradores.
+
+#### RF-RP-08: Control de Asistencia y Disponibilidad
+
+- **Condición**: Los repartidores deberán indicar cuándo están disponibles para recibir pedidos.
+- **Acción**: Podrán marcarse como disponibles, en pausa o fuera de servicio.
+- **Resultado**: El sistema solo asignará pedidos a repartidores disponibles.
+
+#### RF-RP-09: Liquidaciones y Pagos a Repartidores
+
+- **Condición**: Se debe gestionar el pago a los repartidores en función de sus entregas realizadas.
+- **Acción**: Se calcularán las ganancias según el modelo de pago definido (por pedido, por distancia, etc.).
+- **Resultado**: El administrador podrá generar reportes de liquidaciones y realizar pagos de forma automatizada o manual.

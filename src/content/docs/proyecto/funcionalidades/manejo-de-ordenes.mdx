@@ -1,0 +1,52 @@
+---
+title: Manejo de Ordenes
+description: Requerimientos funcionales para el manejo de ordenes
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Obejtivo">
+Implementar un módulo integral para la administración y trazabilidad de órdenes que debe gestionar el ciclo completo de las órdenes, desde su creación hasta su cierre. Deberá permitir la visualización detallada y la actualización en tiempo real del estado de las órdenes activas, además de gestionar un historial de órdenes finalizadas o canceladas para análisis y auditoría.
+</Aside>
+
+#### RF-OM-01: Visualización del Listado de Órdenes Activas
+
+- **Condición**: Al ingresar al módulo de órdenes, el sistema deberá mostrar un listado paginado de todas las órdenes activas.
+- **Acción**: El listado incluirá información resumida como el ID de la orden, fecha y hora de recepción, restaurante asociado, cliente, monto total y estado actual.
+- **Resultado**: El administrador podrá utilizar funcionalidades comunes (búsqueda, filtrado, exportación) para localizar y analizar rápidamente las órdenes activas.
+
+#### RF-OM-02: Visualización Detallada de una Orden
+
+- **Condición**: Al seleccionar una orden del listado, se desplegará una pantalla de detalles.
+- **Acción**: La vista de detalles estará dividida en secciones:
+    - Navegación: Mostrará el ID de la orden, estado actual (mediante un badge), información del cliente (foto, nombre) y la fecha/hora de la orden, además de opciones para imprimir, asignar repartidor y cambiar el estado.
+    - Trazabilidad: Se presentará una línea de tiempo o pasos que ilustren el progreso de la orden (desde la recepción hasta la entrega), incluyendo marcas temporales en cada transición.
+    - Cliente: Una sección con la información completa del cliente.
+    - Entrega: Información referente a la dirección de entrega y datos del repartidor asignado.
+    - Pedido: Un resumen que detalle los ítems solicitados, así como cualquier información sobre descuentos, puntos de recompensa y totales de la trans**acción**.
+- **Resultado**: El administrador tendrá una visión completa y estructurada de cada orden, permitiendo la verificación y seguimiento detallado.
+
+#### RF-OM-03: Actualización del Estado de la Orden
+
+- **Condición**: En la pantalla de detalles de una orden, el administrador podrá optar por modificar el estado de esta.
+- **Acción**: El sistema presentará opciones predefinidas (por ejemplo, Pendiente, En Preparación, En Camino, Entregada, Cancelada) que permitirán actualizar el estado de la orden.
+- Validación: Se verificará que la transición de estado sea coherente con la lógica del flujo de trabajo (por ejemplo, no permitir pasar de "Pendiente" a "Entregada" sin pasar por las etapas intermedias).
+- **Resultado**: La actualización se reflejará de inmediato en el sistema y se registrará en el log de trazabilidad de la orden.
+
+#### RF-OM-04: Gestión de la Trazabilidad de la Orden
+
+- **Condición**: Durante el ciclo de vida de cada orden, el sistema deberá registrar automáticamente cada cambio de estado.
+- **Acción**: Se mantendrá un historial interno que documente las transiciones (por ejemplo, hora de recepción, hora de aceptación, hora de preparación, etc.).
+- **Resultado**: Esta trazabilidad permitirá auditorías internas y la generación de reportes que ayuden a identificar oportunidades de mejora en el proceso.
+
+#### RF-OM-05: Visualización del Historial de Órdenes
+
+- **Condición**: En una sección específica del módulo, se deberá presentar un listado de órdenes finalizadas o canceladas.
+- **Acción**: El historial incluirá información esencial (ID de la orden, detalles resumidos, fecha, total y estado final) y permitirá el uso de filtros por fecha o estado.
+- **Resultado**: Los administradores podrán consultar y analizar el rendimiento histórico del sistema, facilitando la toma de decisiones y la identificación de patrones operativos.
+
+#### RF-OM-06: Integración con Notificaciones y Alertas
+
+- **Condición**: Durante el procesamiento de órdenes, el sistema deberá enviar notificaciones a los usuarios correspondientes (por ejemplo, al repartidor asignado o al cliente) ante cambios relevantes de estado.
+- **Acción**: Se configurarán alertas automáticas que se activarán en momentos clave del flujo de la orden.
+- **Resultado**: Esto asegurará una comunicación eficiente y oportuna, mejorando la coordinación y la satisf**acción** del usuario.

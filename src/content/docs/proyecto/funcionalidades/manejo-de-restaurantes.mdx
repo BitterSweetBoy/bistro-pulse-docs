@@ -1,0 +1,35 @@
+---
+title: Manejo de Restaurantes
+description: Requerimientos funcionales para el manejo de restaurantes
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Obejtivo">
+El sistema permitirá al administrador gestionar la información de los restaurantes asociados. La interfaz facilitará la administración de registros de restaurantes, permitiendo la creación, edición, visualización y desactivación de dichos registros.
+</Aside>
+
+#### RF-MR-01: Agregar Restaurante
+
+- **Condición:** Cuando el administrador selecciona la opción "Agregar Restaurante".
+- **Acción:** El sistema desplegará un formulario para capturar la información básica del restaurante.
+- **Validación:** Se verificará que los campos obligatorios estén completos y que la información cumpla con el formato requerido.
+- **Resultado:** Se creará un nuevo registro en la base de datos.
+
+#### RF-MR-02: Visualizar Restaurante
+
+- **Condición:** Cuando el administrador selecciona un restaurante del listado.
+- **Acción:** El sistema mostrará una pantalla de detalles con la información completa del restaurante.
+- **Resultado:** El administrador podrá revisar la información registrada.
+
+#### RF-MR-03: Editar Restaurante
+
+- **Condición:** Cuando el administrador elige la opción "Editar" en la pantalla de detalles de un restaurante.
+- **Acción:** Se desplegará un formulario precargado con los datos existentes para permitir modificaciones.
+- **Validación:** Se aplicarán las mismas validaciones que en el proceso de agregar un restaurante.
+
+#### RF-MR-04: Desactivar Restaurante
+
+- **Condición:** Cuando el administrador decide desactivar un restaurante.
+- **Acción:** El sistema solicitará una confirmación mediante un mensaje o modal.
+- **Resultado:** Una vez confirmada la acción, el estado del restaurante se actualizará a "inactivo", impidiendo su uso en operaciones activas sin eliminar el registro.
