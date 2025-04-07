@@ -53,12 +53,14 @@ export default defineConfig({
 				{
 					label: 'Bistro Pulse Api',
 					items: [
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Getting Started', slug: 'api/inicio' },
 					],
 				},
 				{
 					label: 'Bistro Pulse Frontend',
-					autogenerate: { directory: 'reference' },
+					items: [
+						{ label: 'Getting Started', slug: 'frontend/inicio' },
+					],
 				},
 			],
 		}),
