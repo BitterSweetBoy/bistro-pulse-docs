@@ -36,18 +36,11 @@ export default defineConfig({
 						  { label: 'Funcionalidades', slug: 'proyecto/requerimientos-funcionales' },
 						  { label: 'Manejo de Restaurantes', slug: 'proyecto/funcionalidades/manejo-de-restaurantes' },
 						  { label: 'Manejo de Usuarios', slug: 'proyecto/funcionalidades/manejo-de-usuarios' },
-						  {
-							label: 'Manejo de Ordenes', slug: 'proyecto/funcionalidades/manejo-de-ordenes',
-						  },
-						  {
-							label: 'Reseñas y Valoraciones', slug: 'proyecto/funcionalidades/reseñas-y-valoraciones',
-						  },
-						  {
-							label: 'Manejo de Repartidores', slug: 'proyecto/funcionalidades/repartidores',
-						  },
-						  {
-							label: 'Administración del sistema', slug: 'proyecto/funcionalidades/administracion-del-sistema',
-						  }
+						  { label: 'Manejo de Menú', slug: 'proyecto/funcionalidades/manejo-de-menu' },
+						  { label: 'Manejo de Ordenes', slug: 'proyecto/funcionalidades/manejo-de-ordenes',},
+						  { label: 'Reseñas y Valoraciones', slug: 'proyecto/funcionalidades/reseñas-y-valoraciones',},
+						  { label: 'Manejo de Repartidores', slug: 'proyecto/funcionalidades/repartidores',},
+						  { label: 'Administración del sistema', slug: 'proyecto/funcionalidades/administracion-del-sistema',}
 						]
 					  },
 					  { label: 'Requerimientos no Funcionales', slug: 'proyecto/requerimientos-no-funcionales' },

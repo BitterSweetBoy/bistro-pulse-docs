@@ -1,0 +1,56 @@
+---
+title: Manejo del Menu
+description: Requerimientos funcionales para el manejo de menu y extras
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip" title="Obejtivo">
+El sistema debe permitir la gestión integral del menú, categorías del menú y extras, facilitando la creación, edición, eliminación y desactivación de estos registros, sin detallar en este documento la estructura específica de la información.
+</Aside>
+
+Este módulo abarca la administración integral del catálogo de productos ofrecidos en el restaurante. Se divide en tres subáreas, cada una orientada a facilitar un aspecto clave de la gestión del menú:
+
+- Listado de Comida: Permite la visualización, búsqueda, filtrado y administración (creación, edición, eliminación y desactivación) de los productos que componen el menú. Además, incluye la posibilidad de gestionar variantes (por ejemplo, diferentes tamaños o presentaciones) y la visualización de reseñas y calificaciones de los productos, proporcionando retroalimentación tanto para la administración como para los usuarios finales.
+- Categorías: Facilita la organización del menú en grupos lógicos, permitiendo la creación, edición y eliminación de categorías. Se implementarán validaciones para evitar la eliminación de categorías que contengan productos activos, garantizando la integridad de la organización del menú.
+- Extras: Gestiona los complementos o adiciones que pueden asociarse a los productos del menú, tales como acompañamientos o ingredientes extra. Este submódulo incluye funcionalidades para la creación, edición, eliminación y desactivación de registros de extras, asegurando que se puedan mantener actualizadas y coherentes las opciones adicionales ofrecidas.
+
+#### 1.1.3.1. RF-MM-01: Agregar Producto al Menú
+
+- **Condición**: Cuando el administrador selecciona la opción "Agregar Producto".
+- **Acción**: El sistema desplegará un formulario para capturar la información básica del producto, incluyendo la opción de definir variantes si corresponde.
+- **Validación**: Se verificará que se ingresen los campos obligatorios y que no se esté duplicando el registro o que exista una similitud con otro.
+- **Resultado**: Se creará un nuevo registro en el catálogo de productos, y en dado caso exista una similitud con otro deberá notificar al usuario con una advertencia que el producto se creó, pero hay otro similar.
+
+#### 1.1.3.2. RF-MM-02: Visualizar Detalles del Producto
+
+- **Condición**: Cuando el administrador selecciona un producto del listado.
+- **Acción**: El sistema mostrará una pantalla de detalles que incluya la información completa del producto, sus variantes (si las hubiera), y las reseñas o calificaciones registradas por los usuarios.
+- **Resultado**: Se facilitará la revisión y **validación** de la información del producto, como son sus reseñas y cantidad de ventas.
+
+#### RF-MM-03: Editar Producto del Menú
+
+- **Condición**: Cuando el administrador elige la opción "Editar" en la vista de detalles de un producto.
+- **Acción**: Se desplegará un formulario precargado con la información existente para permitir su modificación.
+- **Validación**: Se aplicarán las mismas validaciones que en el proceso de agregar un producto.
+- **Resultado**: Al confirmar, el sistema actualizará el registro del producto en la base de datos.
+
+#### RF-MM-04: Eliminar/Desactivar Producto
+
+- **Condición**: Cuando el administrador decide eliminar o desactivar un producto.
+- **Acción**: El sistema solicitará la confirmación de la **acción** a través de un mensaje o modal.
+- **Resultado**: Una vez confirmada la **acción**, el producto se eliminará o cambiará su estado a "inactivo", sin eliminar el registro de forma permanente, facilitando una posible reactivación.
+
+#### RF-MM-05: Gestión de Categorías del Menú
+
+- **Condición**: Desde la interfaz de gestión de categorías, el administrador puede agregar, editar o eliminar una categoría.
+- **Acción**: Se desplegará un formulario para la creación o modificación.
+- **Validación**: Se validará que no se pueda eliminar una categoría que contenga productos activos.
+- **Resultado**: El sistema actualizará el listado de categorías, permitiendo una organización lógica y coherente del menú.
+
+#### RF-MM-06: Gestión de Extras
+
+- **Condición**: Desde la sección de extras, el administrador podrá gestionar complementos para el menú.
+- **Acción**: Se ofrecerá la posibilidad de agregar, editar, eliminar o desactivar extras mediante un formulario específico y con las opciones de marcar si e extra tiene diferentes presentaciones.
+- **Validación**: Se verificarán los datos ingresados, garantizando que se cumplan los formatos y restricciones definidas.
+- **Resultado**: Se actualizará el catálogo de extras disponibles, permitiendo su asociación a los productos del menú.  
