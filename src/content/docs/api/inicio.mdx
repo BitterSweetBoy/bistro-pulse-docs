@@ -1,6 +1,91 @@
 ---
 title: Bistro Pulse Api
-description: Una guia para entender el funcionamiento de Bistro Pulse Api
+description: Guía rápida para poner en marcha Bistro Pulse API en tu máquina local
 ---
 
+import { Aside, Code, Tabs, TabItem  } from '@astrojs/starlight/components';
 
+En esta sección cubriremos desde los **requisitos previos** hasta cómo **levantar** y **probar** la API en tu entorno local.
+
+## 1. Requisitos Previos
+
+<Aside>
+Asegúrate de tener instalados:
+- **.NET 8 SDK**  
+- **PostgreSQL** (local o remota)  
+- **Git**  
+</Aside>
+
+---
+## 2. Clonar el Repositorio
+
+export const exampleCode = `git clone https://github.com/BitterSweetBoy/BistroPulseApi
+cd bistro-pulse-api`
+
+<Code code={exampleCode} lang="bash"  />
+
+---
+## 3. Configurar `appsettings.json`
+
+export const config = `{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "BistroPulseDB": "Server=localhost;Port=5432;Database=bistropulse;User Id=postgres;Password=mi_password;"
+  },
+  "Serilog": {
+    "SeqServerUrl": "http://localhost:5341",
+    "MinimumLevel": "Information",
+    "WriteTo": [
+      { "Name": "Console" },
+      {
+        "Name": "Seq",
+        "Args": { "serverUrl": "http://localhost:5341" }
+      }
+    ],
+    "Enrich": [ "FromLogContext" ],
+    "Properties": {
+      "Application": "BistroPulseApi"
+    }
+  },
+  "AllowedHosts": "*"
+}`;
+
+export const file = `appsettings.json`;
+
+<Code code={config} lang="json" title={file}  />
+
+
+<Aside type="tip" title="Tip"> 
+
+Para no tener credenciales en el repositorio, puedes usar [User Secrets de .NET](https://learn.microsoft.com/aspnet/core/security/app-secrets) en desarrollo:
+
+```bash
+ dotnet user-secrets init
+ dotnet user-secrets set "ConnectionStrings:BistroPulseDB" "Server=...;Database=...;User Id=...;Password=..."
+ dotnet user-secrets set "Serilog:SeqServerUrl" "http://localhost:5341"
+ ```
+</Aside>
+---
+
+## 4. Instalar Dependencias
+<Code code='dotnet restore' lang='bash' title='# En la carpeta del API (.NET)' />
+---
+
+## 5. Levantar la API
+
+<Tabs>
+  <TabItem  label="Desarrollo">
+    <Code code='cd BistroPulseApi
+    dotnet watch run --launch-profile Development' language="bash" />
+  </TabItem >
+  <TabItem  label="Producción">
+    <Code code='dotnet publish -c Release -o ./publish
+    cd publish
+    dotnet BistroPulseApi.dll' language="bash" />
+  </TabItem >
+</Tabs>
