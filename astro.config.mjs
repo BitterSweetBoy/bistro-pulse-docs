@@ -85,6 +85,6 @@ export default defineConfig({
           },
       ],
       }), expressiveCode(), mdx()],
-
+  output: 'server',
   adapter: vercel(),
 });
