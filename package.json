@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "postinstall": "npx playwright install",
-    "build": "astro build",
+    "build": "npx playwright install-deps && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
